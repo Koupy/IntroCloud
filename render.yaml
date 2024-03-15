@@ -3,6 +3,7 @@ services:
     name: IntroCloud
     plan: free
     branch: main
+    runtime: node
     region: frankfurt
     rootDir: ./
     repo: https://github.com/Koupy/IntroCloud
