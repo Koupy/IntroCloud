@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: IntroCloud
+    plan: free
+    branch: main
+    region: frankfurt
+    rootdir: IntroCloud
+    repo: https://github.com/Koupy/IntroCloud
+    buildCommand: "npm i"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgreSQL-IntroCloud
+          property: connectionString
+
+databases:
+  - name: postgreSQL-IntroCloud
+    plan: free
